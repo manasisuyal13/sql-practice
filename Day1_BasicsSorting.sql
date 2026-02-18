@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 SELECT *
 FROM customers; -- Retrieve all customer data
 
@@ -88,5 +87,4 @@ SELECT *
 FROM customers
 ORDER BY 
 score desc,
->>>>>>> cb5213776f938657aad0a71cdae46a13ec845bde
 country ASC; -- since score is written first to the tables would be sorted in descending order of score
