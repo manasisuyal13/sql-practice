@@ -1,4 +1,4 @@
-# 📊 SQL Learning Journey
+# 📊 SQL Learning
 ---
 
 ## 📅 Day 1: Basics & Sorting
