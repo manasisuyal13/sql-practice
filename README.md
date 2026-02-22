@@ -73,4 +73,28 @@ Understanding how to clear data safely:
 * **`TRUNCATE`**: Wipes all rows; resets auto-increments; very fast.
 * **`DROP`**: Deletes the whole table; it’s just gone.
 
+---
+
+## 📅 Day 4: Filtering Data
+**Key Concepts:**
+* **Comparison Operators:** Filtering rows using `=`, `!=`, `>`, `>=`, `<`, `<=`.
+* **Logical Operators:** Combining conditions with `AND`, `OR`, and `NOT`.
+* **Range Operator:** Using `BETWEEN` for inclusive range filtering.
+* **Membership Operators:** `IN` and `NOT IN` as shorthand for multiple `OR` conditions.
+* **Search Operator:** Using `LIKE` with `%` (any characters) and `_` (one character) for pattern matching.
+
+---
+
+## 📅 Day 5: Joins
+**Key Concepts:**
+* **INNER JOIN:** Returns only rows with a match in both tables.
+* **LEFT JOIN:** All rows from left table, `NULL` where no match on the right.
+* **RIGHT JOIN:** All rows from right table, `NULL` where no match on the left.
+* **FULL JOIN:** All rows from both tables, `NULL` on whichever side has no match.
+* **Left Anti Join:** `LEFT JOIN` + `WHERE right_table.key IS NULL` → rows in left with no match in right.
+* **Right Anti Join:** `RIGHT JOIN` + `WHERE left_table.key IS NULL` → rows in right with no match in left.
+* **Full Anti Join:** `FULL JOIN` + `WHERE either key IS NULL` → unmatched rows from both sides.
+* **CROSS JOIN:** Cartesian product — every possible row combination from both tables.
+* **Aliases:** Using `AS` (e.g., `customers AS c`) to keep multi-table queries readable.
+
 
