@@ -87,3 +87,49 @@ FROM customers AS c
 RIGHT JOIN orders AS o
 ON c.id = o.customer_id
 WHERE c.id IS NULL;
+
+-- FULL ANTI JOIN- Returns only rows that don't match in either tables
+-- Find customers without orders and orders without customers
+SELECT * 
+FROM orders o
+FULL JOIN customers c
+on c.id = o.customer_id
+WHERE c.id IS NULL OR o.customer_id IS NULL;
+
+-- CROSS JOIN- Combines every row from left with every row in right (All possible combinations- cartesian join)
+-- Generate all possible combinations of customers and orders
+SELECT *
+FROM customers 
+CROSS JOIN orders;
+
+-- CHALLENGE 1:- Get all customers along with their orders, but for customers who have placed an order without using INNER JOIN
+SELECT * 
+FROM customers c
+LEFT JOIN orders o
+ON c.id = o.customer_id
+WHERE customer_id IS NOT NULL;
+
+/* CHALLENGE 2:- Using SalesDB, Retrieve a list of all orders, along with the related customer, product and employee details.
+For each order, display-
+- Order ID
+- Customer's name
+- Product name
+- Sales
+- Price
+- Sales person's name */
+SELECT 
+o.OrderID,
+o.Sales,
+c.FirstName,
+c.LastName,
+p.Product AS ProductName,
+p.Price,
+e.FirstName,
+e.LastName
+FROM Sales.Orders o
+LEFT JOIN Sales.Customers c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN Sales.Products p
+ON o.ProductID = p.ProductID
+LEFT JOIN Sales.Employees AS e
+ON SalesPersonID = e.EmployeeID;
