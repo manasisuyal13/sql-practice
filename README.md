@@ -1,4 +1,4 @@
-# 📊 SQL Learning
+# 📊 My SQL Learning
 ---
 
 ## 📅 Day 1: Basics & Sorting
